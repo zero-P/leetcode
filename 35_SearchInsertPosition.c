@@ -7,9 +7,9 @@
 
 #include <stdio.h>
 
-int searchInsert(int* nums, int numsSize, int target){
+int searchInsert(int* nums, int numsSize, int target) {
     int left = 0, right = numsSize - 1, mid;
-    while (left <= right){
+    while (left <= right) {
         mid = left + (right - left) / 2;  //防溢出
         if (nums[mid] == target)
             return mid;
@@ -21,11 +21,11 @@ int searchInsert(int* nums, int numsSize, int target){
     return right + 1; 
 }
 
-int main(){
+int main() {
     int nums[] = {1, 3, 5, 6};
     int target = 7;
     int numsSize = 4;
-    int result = searchInsert(nums,numsSize,target);
+    int result = searchInsert(nums, numsSize, target);
     printf("%d\n", result);
     return 0;
 }
