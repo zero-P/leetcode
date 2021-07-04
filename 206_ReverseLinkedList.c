@@ -6,18 +6,18 @@
 */
 
 struct ListNode {
-	int val;
-	struct ListNode *next;
+    int val;
+    struct ListNode *next;
 };
 
 struct ListNode* reverse(struct ListNode* cur, struct ListNode* pre){
-	if (!cur)
-		return pre;
-	struct ListNode* temp;
-	temp = cur;
-	cur = cur->next;
-	temp->next = pre;
-	return reverse(cur, temp);
+    if (!cur)
+        return pre;
+    struct ListNode* temp;
+    temp = cur;
+    cur = cur->next;
+    temp->next = pre;
+    return reverse(cur, temp);
 }
 
 struct ListNode* reverseList(struct ListNode* head) {

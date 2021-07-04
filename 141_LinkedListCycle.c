@@ -1,7 +1,7 @@
 /*
 * @Author: zero
 * @Date:   2021-07-03 15:20:41
-* @Last Modified time: 2021-07-03 15:21:49
+* @Last Modified time: 2021-07-04 16:47:33
 * @Description: Given head, the head of a linked list, determine if the linked list has a cycle in it.
 * Return true if there is a cycle in the linked list. Otherwise, return false.
 */
@@ -12,7 +12,7 @@
  *     struct ListNode *next;
  * };
  */
-bool hasCycle(struct ListNode *head) {
+bool hasCycle(struct ListNode* head) {
     if (!head || !head->next)
         return false;
     struct ListNode *fast, *slow;

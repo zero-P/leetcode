@@ -6,22 +6,22 @@
 */
 
 struct ListNode *detectCycle(struct ListNode *head) {
-	if (!head || !head->next)
-		return NULL;
-	struct ListNode *fast, *slow;
+    if (!head || !head->next)
+        return NULL;
+    struct ListNode *fast, *slow;
     fast = slow = head;
-	while (fast && fast->next) {
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
-			break;
-	}
-	if (slow != fast)
-		return NULL;
-	fast = head;
-	while (fast != slow) {
-		fast = fast->next;
-		slow = slow->next;
-	}
-	return fast;
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast)
+            break;
+    }
+    if (slow != fast)
+        return NULL;
+    fast = head;
+    while (fast != slow) {
+        fast = fast->next;
+        slow = slow->next;
+    }
+    return fast;
 }

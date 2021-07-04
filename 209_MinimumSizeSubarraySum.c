@@ -12,23 +12,23 @@
 #include <math.h>
 
 int minSubArrayLen(int target, int* nums, int numsSize) {
-	if (numsSize == 0)
+    if (numsSize == 0)
         return 0;
-	int start = 0;
-	int minLen = numsSize + 1;
-	int sum = 0;
-	for (int end = 0; end < numsSize; end++) {
-		sum += nums[end];
-		while (sum >= target) {
-			minLen = fmin(minLen, end - start + 1);
-			sum -= nums[start++];
-		}
-	}
-	return minLen == numsSize + 1 ? 0 : minLen;
+    int start = 0;
+    int minLen = numsSize + 1;
+    int sum = 0;
+    for (int end = 0; end < numsSize; end++) {
+        sum += nums[end];
+        while (sum >= target) {
+            minLen = fmin(minLen, end - start + 1);
+            sum -= nums[start++];
+        }
+    }
+    return minLen == numsSize + 1 ? 0 : minLen;
 }
 
 int main() {
-	int nums[] = {1, 3, 5, 7, 9};
-	printf("%d", minSubArrayLen(16, nums, 5));
-	return 0;
+    int nums[] = {1, 3, 5, 7, 9};
+    printf("%d", minSubArrayLen(16, nums, 5));
+    return 0;
 }

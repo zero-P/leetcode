@@ -9,24 +9,24 @@
 #include <stdio.h>
 
 bool isPerfectSquare(int num) {
-	if (num == 0 || num == 1)
-		return true;
-	int left = 0, right = num, mid;
-	while (left <= right){
-		mid = left + (right - left) / 2;
-		if (num / mid == mid && num % mid == 0)
-			return true;
-		else if (num / mid > mid)
-			left = mid + 1;
-		else if (num / mid < mid)
-			right = mid - 1;
-		else
-			return false;
-	}
-	return false;
+    if (num == 0 || num == 1)
+        return true;
+    int left = 0, right = num, mid;
+    while (left <= right){
+        mid = left + (right - left) / 2;
+        if (num / mid == mid && num % mid == 0)
+            return true;
+        else if (num / mid > mid)
+            left = mid + 1;
+        else if (num / mid < mid)
+            right = mid - 1;
+        else
+            return false;
+    }
+    return false;
 }
 
 int main() {
-	isPerfectSquare(2) ? printf("T") : printf("F");
-	return 0;
+    isPerfectSquare(2) ? printf("T") : printf("F");
+    return 0;
 }

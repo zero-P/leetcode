@@ -41,22 +41,22 @@ int** generateMatrix(int n, int* returnSize, int** returnColumnSizes) {
         down--;
     }
     if (left == right) 
-    	matrix[left][right] = num;
+        matrix[left][right] = num;
     return matrix;
 }
 
 void print2DArray(int** matrix, int size) {
-	for (int i = 0; i < size; i++) {
-		for (int j = 0; j < size; j ++)
-			printf("%d ", matrix[i][j]);
-		printf("\n");
-	}
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j ++)
+            printf("%d ", matrix[i][j]);
+        printf("\n");
+    }
 }
 
 int main() {
-	int* returnSize = (int*)malloc(sizeof(int));
-	int** returnColumnSizes = (int**)malloc(sizeof(int*));
-	int size = 3;
-	print2DArray(generateMatrix(size, returnSize, returnColumnSizes), size);
-	return 0;
+    int* returnSize = (int*)malloc(sizeof(int));
+    int** returnColumnSizes = (int**)malloc(sizeof(int*));
+    int size = 3;
+    print2DArray(generateMatrix(size, returnSize, returnColumnSizes), size);
+    return 0;
 }

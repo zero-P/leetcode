@@ -11,16 +11,16 @@
 #include <stdio.h>
 
 int removeElement(int* nums, int numsSize, int val) {
-	int slow = 0;
-	for (int fast = 0; fast < numsSize; fast++) {
-		if (val != nums[fast])
-			nums[slow++] = nums[fast];
-	}
-	return slow;
+    int slow = 0;
+    for (int fast = 0; fast < numsSize; fast++) {
+        if (val != nums[fast])
+            nums[slow++] = nums[fast];
+    }
+    return slow;
 }
 
 int main() {
-	int nums[] = {2};
-	printf("%d\n", removeElement(nums, 1, 0));
-	return 0;
+    int nums[] = {2};
+    printf("%d\n", removeElement(nums, 1, 0));
+    return 0;
 }

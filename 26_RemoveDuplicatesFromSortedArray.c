@@ -11,18 +11,18 @@
 #include <stdio.h>
 
 int removeDuplicates(int* nums, int numsSize) {
-	if (numsSize == 0)
-		return 0;
-	int slow = 0;
-	for (int fast = 0; fast < numsSize; fast++) {
-		if (nums[slow] != nums[fast])
-			nums[++slow] = nums[fast];
-	}
-	return slow + 1;
+    if (numsSize == 0)
+        return 0;
+    int slow = 0;
+    for (int fast = 0; fast < numsSize; fast++) {
+        if (nums[slow] != nums[fast])
+            nums[++slow] = nums[fast];
+    }
+    return slow + 1;
 }
 
 int main() {
-	int nums[] = {};
-	printf("%d\n", removeDuplicates(nums, 0));
-	return 0;
+    int nums[] = {};
+    printf("%d\n", removeDuplicates(nums, 0));
+    return 0;
 }
