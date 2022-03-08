@@ -11,7 +11,7 @@
 */
 
 char *removeDuplicates(char *s) {
-    char *stack = (char *) malloc(sizeof(char) * strlen(s));
+    char *stack = (char*)malloc(sizeof(char) * strlen(s));
     int top = -1;
     while (*s) {
         if (top == -1)

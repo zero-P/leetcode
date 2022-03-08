@@ -11,7 +11,7 @@
 
 /**
  * 删除字符串多余空格
- * @param s 被处理的字符串
+ * @param s 待处理字符串
  */
 void removeExtraSpaces(char *s) {
     char *p, *q;
@@ -35,7 +35,7 @@ void removeExtraSpaces(char *s) {
 
 /**
  * 反转字符串
- * @param s   被处理的字符串
+ * @param s   待处理字符串
  * @param len 串 s 的长度
  */
 void reserveStr(char *s, int len) {

@@ -15,12 +15,12 @@
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** generateMatrix(int n, int* returnSize, int** returnColumnSizes) {
-    int** matrix = (int**)malloc(sizeof(int*) * n);  // 二级指针 matrix
-    *returnColumnSizes = (int*)malloc(sizeof(int) * n);  // 一级指针 *returnColumnSizes
+    int** matrix = (int**)malloc(sizeof(int*) * n);  //二级指针 matrix
+    *returnColumnSizes = (int*)malloc(sizeof(int) * n);  //一级指针 *returnColumnSizes
     for (int i = 0; i < n; i++) {
-        matrix[i] = (int*)malloc(sizeof(int) * n);  // 一级指针 matrix[i]
-        memset(matrix[i], 0, sizeof(int) * n);  // 初始化
-        (*returnColumnSizes)[i] = n;  // 矩阵第 i 列元素的个数
+        matrix[i] = (int*)malloc(sizeof(int) * n);  //一级指针 matrix[i]
+        memset(matrix[i], 0, sizeof(int) * n);  //初始化
+        (*returnColumnSizes)[i] = n;  //矩阵第 i 列元素的个数
     }
     *returnSize = n;
     int left = 0, right = n - 1, up = 0, down = n - 1;
@@ -40,7 +40,7 @@ int** generateMatrix(int n, int* returnSize, int** returnColumnSizes) {
         up++;
         down--;
     }
-    if (left == right) 
+    if (left == right)
         matrix[left][right] = num;
     return matrix;
 }

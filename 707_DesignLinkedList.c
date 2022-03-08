@@ -69,7 +69,9 @@ void myLinkedListAddAtTail(MyLinkedList* obj, int val) {
     return;
 }
 
-/** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
+/** Add a node of value val before the index-th node in the linked list.
+ *  If index equals to the length of linked list, the node will be appended to the end of linked list.
+ *  If index is greater than the length, the node will not be inserted. */
 void myLinkedListAddAtIndex(MyLinkedList* obj, int index, int val) {
     if (index > obj->length)
         return;
@@ -110,7 +112,7 @@ void myLinkedListDeleteAtIndex(MyLinkedList* obj, int index) {
     obj->head = h->next;
     if (obj->length == 0 || obj->length == 1)
         obj->tail = obj->head;
-    if (p->next == NULL)  // 删的是尾结点
+    if (p->next == NULL)  //删的是尾结点
         obj->tail = p;
     return;
 }

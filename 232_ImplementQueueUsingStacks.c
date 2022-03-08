@@ -23,11 +23,11 @@ typedef struct {
 /** Initialize your data structure here. */
 
 MyQueue *myQueueCreate() {
-    MyQueue *queue = (MyQueue *) malloc(sizeof(MyQueue));
-    queue->in = (Stack *) malloc(sizeof(Stack));
-    queue->out = (Stack *) malloc(sizeof(Stack));
-    queue->in->data = (int *) malloc(sizeof(int) * MaxSize);
-    queue->out->data = (int *) malloc(sizeof(int) * MaxSize);
+    MyQueue *queue = (MyQueue*)malloc(sizeof(MyQueue));
+    queue->in = (Stack*)malloc(sizeof(Stack));
+    queue->out = (Stack*)malloc(sizeof(Stack));
+    queue->in->data = (int*)malloc(sizeof(int) * MaxSize);
+    queue->out->data = (int*)malloc(sizeof(int) * MaxSize);
     queue->in->top = -1;
     queue->out->top = -1;
     return queue;

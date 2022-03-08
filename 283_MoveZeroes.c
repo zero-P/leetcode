@@ -16,7 +16,6 @@ void moveZeroes1(int* nums, int numsSize) {
         for (int fast = 0; fast < numsSize; fast++) {
             if (nums[fast])
                 nums[slow++] = nums[fast];
-    
     }
         while (slow < numsSize)  // 覆盖
             nums[slow++] = 0;

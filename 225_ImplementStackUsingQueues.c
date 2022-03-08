@@ -5,65 +5,69 @@
 */
 #define MaxSize 101
 typedef struct {
-	int data[MaxSize];
-	int front;
-	int rear;
+    int data[MaxSize];
+    int front;
+    int rear;
 } Queue;
 
 typedef struct {
-	Queue *Q;
+    Queue *Q;
 } MyStack;
 
+bool isEmptyQueue(Queue* Q) {
+    if (Q->rear == Q->front)
+        return true;
+    return false;
+}
+
+void initQueue(Queue* Q) {
+    Q = (Queue*)malloc(sizeof(Queue));
+    S->Q->front = S->Q->rear = 0;
+}
+
 void queuePush(Queue* Q, int x) {
-	Q->data[++Q->front % MaxSize] = x;
+    Q->data[++(Q->rear) % MaxSize] = x;
 }
 
 int queuePop(Queue* Q) {
-	return Q->data[(++(Q->rear) + MaxSize) % MaxSize];
-}
-
-bool isEmptyQueue(Queue* Q) {
-	if (Q->rear == Q->front)
-		return true;
-	return false;
+    return Q->data[++(Q->front) % MaxSize];
 }
 
 /** Initialize your data structure here. */
 
 MyStack* myStackCreate() {
-	MyStack *S = (MyStack *) malloc(sizeof(MyStack));
-	S->Q = (Queue *) malloc(sizeof(Queue));
-	S->Q->front = S->Q->rear = 0;
-	return S;
+    MyStack *S = (MyStack*)malloc(sizeof(MyStack));
+    initQueue(S->Q);
+    return S;
 }
 
 /** Push element x onto stack. */
 void myStackPush(MyStack* obj, int x) {
-	queuePush(obj->Q, x);
+    queuePush(obj->Q, x);
 }
 
 /** Removes the element on top of the stack and returns that element. */
 int myStackPop(MyStack* obj) {
-	int flag = obj->Q->front;
-	while ((obj->Q->rear + 1) % MaxSize != flag) {
-		queuePush(obj->Q, queuePop(obj->Q));
-	}
-	return queuePop(obj->Q);
+    int flag = obj->Q->rear;
+    while ((obj->Q->front + 1) % MaxSize != flag) {
+        queuePush(obj->Q, queuePop(obj->Q));
+    }
+    return queuePop(obj->Q);
 }
 
 /** Get the top element. */
 int myStackTop(MyStack* obj) {
-	return obj->Q->data[obj->Q->front];
+    return obj->Q->data[obj->Q->rear];
 }
 
 /** Returns whether the stack is empty. */
 bool myStackEmpty(MyStack* obj) {
-	return isEmptyQueue(obj->Q);
+    return isEmptyQueue(obj->Q);
 }
 
 void myStackFree(MyStack* obj) {
-	free(obj->Q);
-	free(obj);
+    free(obj->Q);
+    free(obj);
 }
 
 /**

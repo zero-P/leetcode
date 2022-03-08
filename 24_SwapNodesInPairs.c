@@ -45,7 +45,7 @@ struct ListNode* swapPairs(struct ListNode* head) {
         temp2 = cur->next->next;
         cur->next->next = temp1;
         temp1->next = temp2;
-        cur = temp1;  // 不能是 cur->next = temp2
+        cur = temp1;  //不能是 cur->next = temp2
     }
     return head;
 }
